@@ -6,9 +6,9 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
+router.get('/:id', quranCtrl.getRandomVerse)
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
-// router.get('/', checkAuth, quranCtrl.index)
 
 export { router }
