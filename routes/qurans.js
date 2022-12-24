@@ -6,8 +6,8 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
-router.get('/:id', quranCtrl.getRandomVerse)
-
+router.get("/",quranCtrl.getAll)
+router.get('/:edition', quranCtrl.getRandomVerse)
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 
