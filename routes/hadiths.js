@@ -6,9 +6,10 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
+router.get('/', hadithCtrl.getChapters)
+router.get('/:id', hadithCtrl.getInfo)
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
-// router.get('/', checkAuth, hadithCtrl.index)
 
 export { router }

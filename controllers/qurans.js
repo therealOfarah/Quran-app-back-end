@@ -12,7 +12,7 @@ export function getRandomVerse(req,res){
     res.status(500)
   })
 }
-export async function getAll(req,res){
+export function getAll(req,res){
 
   axios(`http://api.alquran.cloud/v1/quran/ar.asad`)
   .then(response=>{
@@ -22,4 +22,14 @@ export async function getAll(req,res){
       console.log(error.data)
       res.status(500)
     })
+}
+export function getSurah(req,res){
+  axios(`http://api.alquran.cloud/v1/surah/${req.params.surah}`)
+  .then(response=>{
+    let data = response.data.data
+    res.json(data)
+  }).catch(error=>{
+    console.error(error)
+    res.status(error)
+  })
 }

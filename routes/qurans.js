@@ -8,6 +8,7 @@ const router = Router()
 
 router.get("/",quranCtrl.getAll)
 router.get('/:edition', quranCtrl.getRandomVerse)
+router.get('/:surah', quranCtrl.getSurah)
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 
