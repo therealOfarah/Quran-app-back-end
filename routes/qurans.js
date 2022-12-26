@@ -11,5 +11,6 @@ router.get('/:edition', quranCtrl.getRandomVerse)
 router.get('/:surah', quranCtrl.getSurah)
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
+router.post("/save",checkAuth,quranCtrl.saveVerse)
 
 export { router }

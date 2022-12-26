@@ -5,8 +5,8 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   photo: String,
-  quran:{ type: Schema.Types.ObjectId, ref: 'Quran' },
-  hadith:{ type: Schema.Types.ObjectId, ref: 'Hadith' }
+  quran:[{ type: Schema.Types.ObjectId, ref: 'Quran' }],
+  hadith:[{ type: Schema.Types.ObjectId, ref: 'Hadith' }]
 },{
   timestamps: true,
 })
