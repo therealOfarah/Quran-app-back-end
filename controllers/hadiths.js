@@ -11,7 +11,7 @@ export function getChapters(req,res){
   })
 }
 export function getInfo(req,res){
-  axios.get(`https://api.hadith.gading.dev/books/${req.params.id}?range=300-500`) 
+  axios(`https://api.hadith.gading.dev/books/${req.params.id}?range=300-500`) 
   .then(response => {
       const data = (response.data)
       res.json(data)

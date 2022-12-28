@@ -4,7 +4,7 @@ import axios from "axios";
 //get a random number
 export function getRandomVerse(req,res){
 
-    axios(`http://api.alquran.cloud/v1/ayah/${req.params.edition}`)
+    axios(`http://api.alquran.cloud/v1/ayah/${req.params.edition}/ar.alafasy`)
     .then(response=>{
       let data = response.data.data
         res.json(data)
@@ -14,7 +14,6 @@ export function getRandomVerse(req,res){
   })
 }
 export function getAll(req,res){
-
   axios(`http://api.alquran.cloud/v1/quran/ar.asad`)
   .then(response=>{
     let data = response.data.data
