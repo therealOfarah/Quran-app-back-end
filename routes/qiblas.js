@@ -5,7 +5,7 @@ import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 const router = Router()
 
 /*---------- Public Routes ----------*/
-router.get('/', qiblaCtrl.getPrayerTimes)
+router.get('/:location', qiblaCtrl.getPrayerTimes)
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 
