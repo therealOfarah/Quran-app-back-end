@@ -9,7 +9,18 @@ function index(req, res) {
     res.status(500).json(err)
   })
 }
-
+export function account(req,res){
+  Profile.findById(req.params.id)
+  .populate('quran')
+  .populate('hadith')
+  .then(profile=>{
+    res.json(profile)
+  })
+  .catch(error=>{
+    console.error(error)
+    res.status(500).json(error)
+  })
+}
 function addPhoto(req, res) {
   const imageFile = req.files.photo.path
   Profile.findById(req.params.id)
