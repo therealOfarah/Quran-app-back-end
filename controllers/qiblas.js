@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export function getPrayerTimes(req,res){
-  console.log(req.params,'**********')
-  axios('http://api.aladhan.com/v1/timings/03012023?latitude=51.508515&longitude=-0.1254872&method=3')
+  const info = req.params.location.split(',')
+  axios(`http://api.aladhan.com/v1/timings/${info[0]}?latitude=${info[1]}&longitude=${info[2]}&method=3`)
   .then(prayer=>{
     const data = prayer.data
     res.json(data)
